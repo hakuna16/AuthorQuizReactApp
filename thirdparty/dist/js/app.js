@@ -9,7 +9,7 @@
           return _.extend({
             bgClass: 'neutral',
             showContinue: false
-          },this.props.data.selectGame());
+          }, this.props.data.selectGame());
         },
 
         handleBookSelected: function (title) {
@@ -21,7 +21,7 @@
         },
 
         handleContinue: function () {
-           this.setState(this.getInitialState());
+          this.setState(this.getInitialState());
         },
 
         handleAddGame: function () {
@@ -38,6 +38,7 @@
                         {this.state.books.map(function (b) {
                             return <Book onBookSelected = {this.handleBookSelected}title={b} />;
                           }, this)}
+
                     </div>
                     <div className={"col-md-1 " + this.state.bgClass}></div>
                 </div>
@@ -63,7 +64,7 @@
         propType: {
           title: React.PropTypes.string.isRequired
         },
-        handleClick: function (){
+        handleClick: function () {
           this.props.onBookSelected(this.props.title);
         },
 
@@ -77,12 +78,12 @@
 
     var AddGameForm = React.createClass({
       propTypes: {
-           onGameFormSubmitted: React.PropTypes.func.isRequired
-       },
-       handleSubmit: function (e) {
-           this.props.onGameFormSubmitted(getRefs(this));
-           e.preventDefault();
-       },
+          onGameFormSubmitted: React.PropTypes.func.isRequired
+        },
+      handleSubmit: function (e) {
+          this.props.onGameFormSubmitted(getRefs(this));
+          e.preventDefault();
+        },
 
       render: function () {
         return (<div class ="row">
@@ -90,19 +91,24 @@
                         <h1> Add Game </h1>
                         <form role="form" onSubmit={this.handleSubmit}>
                                 <div className="form-group">
-                                  <input ref="imageUrl" type="text" className="form-control" placeholder="Image Url" />
+                                  <input ref="imageUrl" type="text" className="form-control"
+                                  placeholder="Image Url" />
                                 </div>
                                 <div className="form-group">
-                                  <input ref="answer1" type="text" className="form-control" placeholder="Answer 1" />
+                                  <input ref="answer1" type="text" className="form-control"
+                                  placeholder="Answer 1" />
                                 </div>
                                 <div className="form-group">
-                                  <input ref="answer2" type="text" className="form-control" placeholder="Answer 2" />
+                                  <input ref="answer2" type="text" className="form-control"
+                                  placeholder="Answer 2" />
                                 </div>
                                 <div className="form-group">
-                                  <input ref="answer3" type="text" className="form-control" placeholder="Answer 3" />
+                                  <input ref="answer3" type="text" className="form-control"
+                                  placeholder="Answer 3" />
                                 </div>
                                 <div className="form-group">
-                                  <input ref="answer4" type="text" className="form-control" placeholder="Answer 4" />
+                                  <input ref="answer4" type="text" className="form-control"
+                                  placeholder="Answer 4" />
                                 </div>
                                 <button type="submit" className="btn btn-default">Submit</button>
                               </form>
@@ -178,7 +184,8 @@
           React.render(<Quiz data = {data} />, document.getElementById('app'));
         },
         'add': function () {
-          React.render(<AddGameForm onGameFormSubmitted={handleAddFormSubmitted} />, document.getElementById('app'));
+          React.render(<AddGameForm onGameFormSubmitted={handleAddFormSubmitted} />,
+            document.getElementById('app'));
         }
 
       });
@@ -193,10 +200,9 @@
                 document.getElementById('app'));
     }
 
-
     function getRefs(component) {
       var result = {};
-      Object.keys(component.refs).forEach(function(refName) {
+      Object.keys(component.refs).forEach(function (refName) {
                 result[refName] = React.findDOMNode(component.refs[refName]).value;
               });
 
