@@ -76,6 +76,13 @@
       });
 
     var AddGameForm = React.createClass({
+      propTypes: {
+           onGameFormSubmitted: React.PropTypes.func.isRequired
+       },
+       handleSubmit: function (e) {
+           this.props.onGameFormSubmitted(getRefs(this));
+           e.preventDefault();
+       },
 
       render: function () {
         return (<div class ="row">
@@ -166,7 +173,7 @@
         };
       };
 
-      routie({
+    routie({
         '': function () {
           React.render(<Quiz data = {data} />, document.getElementById('app'));
         },
