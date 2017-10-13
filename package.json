@@ -1,0 +1,25 @@
+{
+  "name": "authorquiz",
+  "version": "1.0.0",
+  "description": "This is an application where you need to select the correct author",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakuna16/AuthorQuizReactApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hakuna16/AuthorQuizReactApp/issues"
+  },
+  "homepage": "https://github.com/hakuna16/AuthorQuizReactApp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8"
+  }
+}
